@@ -42,7 +42,7 @@
     lsp-clojure-unwind-all
     lsp-clojure-unwind-thread))
 
-(defun counsel-lsp-clj()
+(defun counsel-lsp-clj-refactorings()
   "List refactoring fns that lsp-clojure provides."
   (interactive)
   (ivy-read "Refactoring: "
