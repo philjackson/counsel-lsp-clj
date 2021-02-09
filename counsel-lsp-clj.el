@@ -44,6 +44,7 @@
     lsp-clojure-unwind-all
     lsp-clojure-unwind-thread))
 
+;;;###autoload
 (defun counsel-lsp-clj-refactorings()
   "List refactoring fns that lsp-clojure provides."
   (interactive)
