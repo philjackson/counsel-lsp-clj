@@ -3,6 +3,7 @@
 ;; Copyright (C) 2021 Phil Jackson
 
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
+;; Package-Requires: ((lsp-mode "7.0.1") (ivy "0.13"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,8 +24,9 @@
 ;;; Code:
 
 (require 'lsp-clojure)
+(require 'ivy)
 
-(defconst refactorings
+(defconst counsel-lsp-clj--refactorings
   '(lsp-clojure-add-import-to-namespace
     lsp-clojure-add-missing-libspec
     lsp-clojure-clean-ns
@@ -42,6 +44,7 @@
     lsp-clojure-unwind-all
     lsp-clojure-unwind-thread))
 
+;;;###autoload
 (defun counsel-lsp-clj-refactorings()
   "List refactoring fns that lsp-clojure provides."
   (interactive)
@@ -52,7 +55,7 @@
                                (replace-regexp-in-string "lsp-clojure-" "" (symbol-name s))
                                (elisp--docstring-first-line (documentation s)))
                             s))
-                    refactorings)
+                    counsel-lsp-clj--refactorings)
             :require-match t
             :action (lambda (m) (call-interactively (cdr m)))))
 
