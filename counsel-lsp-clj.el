@@ -3,6 +3,7 @@
 ;; Copyright (C) 2021 Phil Jackson
 
 ;; Author: Phil Jackson <phil@shellarchive.co.uk>
+;; Package-Requires: ((lsp-mode "7.0.1") (ivy "0.13"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,6 +24,7 @@
 ;;; Code:
 
 (require 'lsp-clojure)
+(require 'ivy)
 
 (defconst refactorings
   '(lsp-clojure-add-import-to-namespace
