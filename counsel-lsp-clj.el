@@ -26,7 +26,7 @@
 (require 'lsp-clojure)
 (require 'ivy)
 
-(defconst refactorings
+(defconst counsel-lsp-clj--refactorings
   '(lsp-clojure-add-import-to-namespace
     lsp-clojure-add-missing-libspec
     lsp-clojure-clean-ns
@@ -54,7 +54,7 @@
                                (replace-regexp-in-string "lsp-clojure-" "" (symbol-name s))
                                (elisp--docstring-first-line (documentation s)))
                             s))
-                    refactorings)
+                    counsel-lsp-clj--refactorings)
             :require-match t
             :action (lambda (m) (call-interactively (cdr m)))))
 
