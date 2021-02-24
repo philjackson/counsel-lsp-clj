@@ -2,7 +2,9 @@
 
 ```elisp
 (use-package counsel-lsp-clj
-  :ensure t)
+  :quelpa (counsel-lsp-clj
+           :fetcher github
+           :repo "philjackson/counsel-lsp-clj"))
 ```
 
 ## Commands
